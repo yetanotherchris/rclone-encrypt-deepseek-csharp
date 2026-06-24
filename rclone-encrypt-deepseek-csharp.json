@@ -1,0 +1,17 @@
+{
+  "homepage": "https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp",
+  "description": "Encrypts and decrypts files using the rclone encryption defaults",
+  "version": "0.1.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp/releases/download/v0.1.0/rclone-encrypt-deepseek-csharp-windows-amd64.exe",
+      "hash": "9b1b4bbe8b816557a5c8a8912302fc34c2f4afbdc6dee3025de7b56377431b7d",
+      "bin": [
+        [
+          "rclone-encrypt-deepseek-csharp-windows-amd64.exe",
+          "rclone-encrypt-deepseek-csharp"
+        ]
+      ]
+    }
+  }
+}

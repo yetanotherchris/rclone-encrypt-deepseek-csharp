@@ -49,25 +49,18 @@ jobs:
           echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
       - name: Restore
         run: dotnet restore
-      - name: Build
-        run: |
-          dotnet publish src/rclone-encrypt-deepseek-csharp/rclone-encrypt-deepseek-csharp.csproj `
-            -c Release `
-            -r ${{ matrix.rid }} `
-            --self-contained true `
-            -p:PublishSingleFile=true `
-            -p:EnableCompressionInSingleFile=true `
-            -p:DebugType=embedded `
-            -o publish
-      - name: Package binary (unix)
+      - name: Build (unix)
         if: runner.os != 'Windows'
+        shell: bash
         run: |
+          dotnet publish src/rclone-encrypt-deepseek-csharp/rclone-encrypt-deepseek-csharp.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:DebugType=embedded -o publish
           mv publish/rclone-encrypt-deepseek-csharp publish/rclone-encrypt-deepseek-csharp-${{ matrix.suffix }}
           tar czf rclone-encrypt-deepseek-csharp-${{ matrix.suffix }}.tar.gz -C publish rclone-encrypt-deepseek-csharp-${{ matrix.suffix }}
-      - name: Rename binary (windows)
+      - name: Build (windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
+          dotnet publish src/rclone-encrypt-deepseek-csharp/rclone-encrypt-deepseek-csharp.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -p:DebugType=embedded -o publish
           Move-Item -Path publish/rclone-encrypt-deepseek-csharp.exe -Destination publish/rclone-encrypt-deepseek-csharp-windows-amd64.exe
       - name: Upload artifact (unix)
         if: runner.os != 'Windows'

@@ -60,8 +60,8 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          dotnet publish src/rclone-encrypt-deepseek-csharp/rclone-encrypt-deepseek-csharp.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:PublishSingleFile=true -p:DebugType=embedded -o publish
-          Move-Item -Path publish/rclone-encrypt-deepseek-csharp.exe -Destination publish/rclone-encrypt-deepseek-csharp-windows-amd64.exe
+          dotnet publish src/rclone-encrypt-deepseek-csharp/rclone-encrypt-deepseek-csharp.csproj -c Release -r ${{ matrix.rid }} --self-contained true -p:DebugType=embedded -o publish
+          Compress-Archive -Path publish\* -DestinationPath rclone-encrypt-deepseek-csharp-${{ matrix.suffix }}.zip -Force
       - name: Upload artifact (unix)
         if: runner.os != 'Windows'
         uses: actions/upload-artifact@v4
@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: rclone-encrypt-deepseek-csharp-windows-amd64
-          path: publish/rclone-encrypt-deepseek-csharp-windows-amd64.exe
+          path: rclone-encrypt-deepseek-csharp-${{ matrix.suffix }}.zip
 
   release:
     needs: build

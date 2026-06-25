@@ -1,0 +1,132 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {},
+    ".NETCoreApp,Version=v10.0/win-x64": {
+      "rclone-encrypt-deepseek-csharp/1.0.0": {
+        "dependencies": {
+          "LibSodium.Net": "0.16.0-alpha",
+          "Norgerman.Cryptography.Scrypt": "2.5.0",
+          "System.CommandLine": "2.0.0-beta4.22272.1"
+        },
+        "runtime": {
+          "rclone-encrypt-deepseek-csharp.dll": {}
+        }
+      },
+      "libsodium/1.0.20.1": {
+        "native": {
+          "runtimes/win-x64/native/libsodium.dll": {
+            "fileVersion": "1.0.20.0"
+          }
+        }
+      },
+      "LibSodium.Net/0.16.0-alpha": {
+        "dependencies": {
+          "libsodium": "1.0.20.1"
+        },
+        "runtime": {
+          "lib/net8.0/LibSodium.Net.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Norgerman.Cryptography.Scrypt/2.5.0": {
+        "runtime": {
+          "lib/net10.0/Norgerman.Cryptography.Scrypt.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        }
+      },
+      "System.CommandLine/2.0.0-beta4.22272.1": {
+        "runtime": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.22.27201"
+          }
+        },
+        "resources": {
+          "lib/net6.0/cs/System.CommandLine.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net6.0/de/System.CommandLine.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0/es/System.CommandLine.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0/fr/System.CommandLine.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0/it/System.CommandLine.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0/ja/System.CommandLine.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0/ko/System.CommandLine.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0/pl/System.CommandLine.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0/pt-BR/System.CommandLine.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0/ru/System.CommandLine.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0/tr/System.CommandLine.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0/zh-Hans/System.CommandLine.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0/zh-Hant/System.CommandLine.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "rclone-encrypt-deepseek-csharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libsodium/1.0.20.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pkiceEqJDQFHjbga3k/oPfTVX9g+GKJZ1VrkuiLhaymt9YNw1Dr7cX9hNuZuNaWcr9WD0moW55k4pMwzQ7JaZQ==",
+      "path": "libsodium/1.0.20.1",
+      "hashPath": "libsodium.1.0.20.1.nupkg.sha512"
+    },
+    "LibSodium.Net/0.16.0-alpha": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uNW5uuT2QEu5zUSDAbNyXM/RPZjnLjMEp88uYMCkH2yr9+jX7LpZsV9JZimdIABKiHivfGqSJAXmj3Bd2tmJUQ==",
+      "path": "libsodium.net/0.16.0-alpha",
+      "hashPath": "libsodium.net.0.16.0-alpha.nupkg.sha512"
+    },
+    "Norgerman.Cryptography.Scrypt/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gcySH68m3xyNn06eZBIdqfNA6iXkAa2rM6z1MsnmtpP2fCzLNa5jIktb1DEi/y5KjRZmAMmOlZVL3z3LPukztQ==",
+      "path": "norgerman.cryptography.scrypt/2.5.0",
+      "hashPath": "norgerman.cryptography.scrypt.2.5.0.nupkg.sha512"
+    },
+    "System.CommandLine/2.0.0-beta4.22272.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1uqED/q2H0kKoLJ4+hI2iPSBSEdTuhfCYADeJrAqERmiGQ2NNacYKRNEQ+gFbU4glgVyK8rxI+ZOe1onEtr/Pg==",
+      "path": "system.commandline/2.0.0-beta4.22272.1",
+      "hashPath": "system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
+    }
+  }
+}

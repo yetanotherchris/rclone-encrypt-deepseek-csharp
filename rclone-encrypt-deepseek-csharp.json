@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp/releases/download/v0.1.0/rclone-encrypt-deepseek-csharp-windows-amd64.exe",
-      "hash": "dea5102824817715d85ccb547da31cc36a83ec965691c9c4c12ef90c7e7510e5",
+      "url": "https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp/releases/download/v0.1.0/rclone-encrypt-deepseek-csharp-windows-amd64.zip",
+      "hash": "9f589bafced39becee5764859ba9ddc561e73c1f34762d36d9961cd973fbb2a9",
+      "extract_dir": "",
       "bin": [
         [
-          "rclone-encrypt-deepseek-csharp-windows-amd64.exe",
+          "rclone-encrypt-deepseek-csharp.exe",
           "rclone-encrypt-deepseek-csharp"
         ]
       ]

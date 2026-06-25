@@ -2,7 +2,9 @@ bin/
 obj/
 publish/
 dist/
+dist2/
 *.user
 *.suo
 .vs/
 *.sln.ide/
+*.dll

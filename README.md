@@ -1,4 +1,4 @@
-# rclone-encrypt-deepseek-csharp
+# cli-deepseek-csharp
 A small CLI tool that encrypts and decrypts using the rclone encryption defaults. Written in C# and published as a single-file, self-contained binary for Windows, macOS, and Linux.
 
 Rclone uses a custom salt if no salt is provided, which this tool will use by default. A few similar tools:
@@ -17,14 +17,14 @@ Rclone encryption uses:
 
 **Homebrew (macOS/Linux)**
 ```bash
-brew tap yetanotherchris/rclone-encrypt-deepseek-csharp https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp
-brew install rclone-encrypt-deepseek-csharp
+brew tap yetanotherchris/cli-deepseek-csharp https://github.com/yetanotherchris/cli-deepseek-csharp
+brew install cli-deepseek-csharp
 ```
 
 **Scoop (Windows)**
 ```powershell
-scoop bucket add rclone-encrypt-deepseek-csharp https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp
-scoop install rclone-encrypt-deepseek-csharp
+scoop bucket add cli-deepseek-csharp https://github.com/yetanotherchris/cli-deepseek-csharp
+scoop install cli-deepseek-csharp
 ```
 
 ## Usage
@@ -35,12 +35,12 @@ The tool detects whether a file is already encrypted (by checking for the `RCLON
 
 ```bash
 # Encrypt a file (you'll be prompted for password and optional salt)
-rclone-encrypt-deepseek-csharp -i plaintext.txt
+cli-deepseek-csharp -i plaintext.txt
 # Written to: plaintext.txt.encrypted
 # (or, if filename encryption succeeds, the encrypted filename)
 
 # Decrypt an encrypted file
-rclone-encrypt-deepseek-csharp -i encrypted_file.bin
+cli-deepseek-csharp -i encrypted_file.bin
 # Written to: decrypted_filename.txt
 ```
 
@@ -48,7 +48,7 @@ rclone-encrypt-deepseek-csharp -i encrypted_file.bin
 
 ```bash
 # WARNING: --password is visible in process lists and shell history
-rclone-encrypt-deepseek-csharp --password "mypassword" -i file.txt
+cli-deepseek-csharp --password "mypassword" -i file.txt
 ```
 
 ### Using environment variable (recommended)
@@ -56,26 +56,26 @@ rclone-encrypt-deepseek-csharp --password "mypassword" -i file.txt
 ```bash
 # Set via environment variable
 $env:RCLONE_ENCRYPT_PASSWORD = "mypassword"
-rclone-encrypt-deepseek-csharp -i file.txt
+cli-deepseek-csharp -i file.txt
 ```
 
 ### With a custom salt
 
 ```bash
-rclone-encrypt-deepseek-csharp --password "mypassword" --salt "mycustomsalt" -i file.txt
+cli-deepseek-csharp --password "mypassword" --salt "mycustomsalt" -i file.txt
 ```
 
 ### Specifying output file
 
 ```bash
-rclone-encrypt-deepseek-csharp -i encrypted.bin -o decrypted.txt
+cli-deepseek-csharp -i encrypted.bin -o decrypted.txt
 ```
 
 ### Filename encoding
 
 ```bash
 # Use base64 filename encoding (default is base32)
-rclone-encrypt-deepseek-csharp --filename-encoding base64 -i file.txt
+cli-deepseek-csharp --filename-encoding base64 -i file.txt
 ```
 
 ## Flags
@@ -93,11 +93,11 @@ rclone-encrypt-deepseek-csharp --filename-encoding base64 -i file.txt
 Requires .NET 10 SDK.
 
 ```bash
-git clone https://github.com/yetanotherchris/rclone-encrypt-deepseek-csharp
-cd rclone-encrypt-deepseek-csharp
-dotnet publish src/rclone-encrypt-deepseek-csharp -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o dist
+git clone https://github.com/yetanotherchris/cli-deepseek-csharp
+cd cli-deepseek-csharp
+dotnet publish src/cli-deepseek-csharp -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o dist
 ```
 
 ## Releases
 
-Pushing a `vX.Y.Z` tag triggers the [Build and Release workflow](.github/workflows/build-release.yml), which cross-compiles binaries for Linux and macOS (amd64/arm64) and Windows (amd64), publishes a GitHub Release, and updates the Scoop manifest (`rclone-encrypt-deepseek-csharp.json`) and Homebrew formula (`Formula/rclone-encrypt-deepseek-csharp.rb`) in this repo.
+Pushing a `vX.Y.Z` tag triggers the [Build and Release workflow](.github/workflows/build-release.yml), which cross-compiles binaries for Linux and macOS (amd64/arm64) and Windows (amd64), publishes a GitHub Release, and updates the Scoop manifest (`cli-deepseek-csharp.json`) and Homebrew formula (`Formula/cli-deepseek-csharp.rb`) in this repo.
